@@ -1,0 +1,161 @@
+import java.awt.*;
+import  java.awt.event.*;
+
+
+class  Check  extends  Frame   implements ActionListener
+{
+	Button b = new Button("Submit");
+	TextField t = new  TextField(16);
+	TextField t2= new TextField(20);
+	TextField t3= new TextField(20);
+    TextField t4= new TextField(20);
+
+
+Label  l = new  Label("Q1.  what is the capital of M.P ?");
+Label  l4 = new  Label("Q2.  what is the chemical formula of water  ?");
+Label  l5 = new  Label("Q3.  what is the atomic weight of oxygen ?");
+Label l2 = new  Label("Marks");
+Label l6= new  Label("total attempt que");
+Label l7 = new  Label(" no. of right answers");
+Label l8 = new  Label("wrong answers");
+	 CheckboxGroup cbg = new  CheckboxGroup();
+	 Checkbox c1= new Checkbox("Bhopal",false,cbg);
+	 Checkbox c2= new Checkbox("Vidisha",false,cbg);
+	 Checkbox c3= new Checkbox("Indore",false,cbg);
+	 Checkbox c4= new Checkbox("delhi",false,cbg);
+	 CheckboxGroup q2 = new  CheckboxGroup();
+	 Checkbox c5= new Checkbox("CO2",false,q2);
+	 Checkbox c6= new Checkbox("H2O",false,q2);
+     Checkbox c7= new Checkbox("P4H6",false,q2);
+	 Checkbox c8= new Checkbox("C4H12O6",false,q2);
+	 CheckboxGroup q3 = new  CheckboxGroup();
+     Checkbox c9= new Checkbox("10u",false,q3);
+     Checkbox c10= new Checkbox("7u",false,q3);
+     Checkbox c11= new Checkbox("16u",false,q3);
+     Checkbox c12= new Checkbox("8u",false,q3);
+	Check()
+	{
+        add(l);
+		add(c1);
+		add(c2);
+		add(c3);
+		add(c4);
+		add(l4);
+		add(c5);
+		add(c6);
+		add(c7);
+		add(c8);
+		add(l5);
+		add(c9);
+		add(c10);
+		add(c11);
+		add(c12);
+		
+
+			
+		add(l2);
+		add(t);
+		add(l6);
+		add(t2);
+		add(l7);
+		add(t3);
+		add(l8);
+		add(t4);
+		add(b);
+		b.addActionListener(this);
+	
+		setLayout(new  FlowLayout());
+	 
+        setSize(333,444);
+	    setVisible(true);
+	
+	}
+
+	public void actionPerformed(ActionEvent e)
+	{
+                int marks=0;
+				int que_count=0;
+				int right_count=0;
+				int wrong_count=0;
+
+				if(c1.getState()){
+					marks=marks+3;
+					que_count=que_count+1;
+					right_count=right_count+1;
+					}
+				if(c2.getState()){
+					marks=marks-1;
+				que_count=que_count+1;
+				wrong_count++;
+				}
+
+if(c3.getState()){
+					marks=marks-1;
+                   que_count=que_count+1;
+				   wrong_count++;
+				   }
+
+if(c4.getState()){
+					marks=marks-1;
+                  que_count=que_count+1;
+				  wrong_count++;
+				  }
+if(c5.getState()){
+					marks=marks-1;
+                 que_count=que_count+1;
+				 wrong_count++;
+				 }
+if(c6.getState()) {
+					marks=marks+3;
+                 que_count=que_count+1;
+				 right_count=right_count+1;
+				 
+				 }
+if(c7.getState()){
+					marks=marks-1;
+               que_count=que_count+1;
+			   wrong_count++;
+			   }
+if(c8.getState()){
+					marks=marks-1;
+                 que_count=que_count+1;
+				 wrong_count++;
+				 }
+if(c9.getState()){
+					marks=marks-1;
+					que_count=que_count+1;
+					 wrong_count++;
+					}
+if(c10.getState()){
+					marks=marks-1;
+                  que_count=que_count+1;
+				   wrong_count++;}
+if(c11.getState()){
+					marks=marks+3;
+                  que_count=que_count+1;
+				  right_count=right_count+1;
+				  }
+if(c12.getState()){
+					marks=marks-1;
+                que_count=que_count+1;
+				 wrong_count++;
+				 }
+
+       t.setText(""+marks);
+        t2.setText(""+que_count);
+	t3.setText(""+right_count);
+    t4.setText(""+wrong_count);
+	}
+
+
+
+}
+
+class MainClass1
+
+{
+	public static void main(String[] args) 
+	{
+		   new  Check();//screen 
+	}
+}
